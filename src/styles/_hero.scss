@@ -1,0 +1,70 @@
+@use 'variaveis' as *;
+
+.hero {
+    padding: 2rem;
+    
+    &__content {
+        display: flex;
+        align-items: center;  // Centraliza verticalmente os elementos
+         gap: 2rem;            // Espaçamento entre a imagem e o conteúdo
+        align-items: flex-start;
+
+        &__branding {
+            flex: 1;              // Define a imagem com um tamanho específico
+            max-width: 600px;
+            img {
+            width: 600px;
+            height: 900px;
+            height: auto;
+            border-radius: 8px;
+            }
+        }
+    
+        &__about {
+            max-width: 600px;
+            
+            text-align: left;  
+            .sobre-filme{
+                padding-top: 16px;
+            }      
+        }
+
+        &__combos{
+            list-style: none;
+            display: flex;
+            padding-top: 16px;
+            button{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 60px;
+                font-size: 18px;
+                color: #f9f9f9;
+                background-color: $corFundoSecundaria;
+                text-transform: uppercase;
+                border-radius: 4px;
+                text-decoration: none;
+                padding: 8px 14px;
+                letter-spacing: 1px;
+                border: 1px solid $corFundoSecundaria;
+                width: 240px;
+                cursor: pointer;
+                &:hover{
+                    background-color: #c4792a;
+                }
+            }
+            &__combo{
+                padding-right: 16px;
+                span{
+                    font-weight: 500;
+                    padding-bottom: 8px;
+                }
+                display: flex;            // Configura o contêiner como flex
+                flex-direction: column;   // Organiza os itens na vertical
+                align-items: center;      // Alinha os itens ao centro horizontalmente
+                gap: 0.5rem;  
+            }
+        }
+    }
+}

@@ -1,0 +1,58 @@
+@use 'variaveis' as *;
+
+.footer {
+    background-color: $corFundoSecundaria;  // Cor de fundo do footer
+    color: $corFont;
+    padding: 2rem 1rem;
+    font-family: $fontPrincipal;
+
+    &__content {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+        
+        &__section {
+        flex: 1;
+        min-width: 250px;  // Garantir que as seções se ajustem bem em telas pequenas
+        margin-bottom: 2rem;
+
+        &--links, &--social {
+        .footer__title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer__list, .footer__social-list {
+            list-style: none;
+            padding: 0;
+
+        .footer__list-item, .footer__social-item {
+            margin-bottom: 0.5rem;
+
+            .footer__link, .footer__social-link {
+                color: $corFont;
+                text-decoration: none;
+                transition: color 0.3s;
+    }
+
+                &:hover {
+                    color: $corFontHover;
+                    }
+                }
+            }
+        }
+    }
+}
+
+    &__bottom {
+        text-align: center;
+        margin-top: 2rem;
+        border-top: 1px solid $corFont;
+        padding-top: 1rem;
+    }
+
+    &__copyright {
+        font-size: 16px;
+        color: $corFont;
+    }
+}

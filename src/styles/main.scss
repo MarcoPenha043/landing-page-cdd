@@ -1,0 +1,63 @@
+@use 'variaveis' as *;
+@use 'header' as *;
+@use 'hero' as *;
+@use 'footer' as *;
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: $corFundo;
+}
+
+@mixin text($fontSize: 16px){
+    font-size: $fontSize;
+    line-height: $fontSize + 10px;
+    color: $corFont;
+    font-family: $fontPrincipal;
+}
+
+@mixin title($fontSize: 40px){
+    @include text($fontSize);
+    color: $corFont;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.text--small{
+    @include text(12px);
+}   
+
+.text{
+    @include text;
+}
+
+.text--big{
+    @include text(18px);
+    font-weight: 500;
+    @media (max-width: 768px){
+        @include text(15px);
+    }
+}
+.link-text{
+    @include text(18px);
+    color: $corFont;
+    text-decoration: underline;
+}
+.title--small{
+    @include text(12px);
+
+    color: $corFont;
+    @media (max-width: 768px){
+        @include title(11px);
+    }
+}
+.title{
+    @include title;
+
+    @media (max-width: 768px){
+        @include title(24px);
+    }
+}

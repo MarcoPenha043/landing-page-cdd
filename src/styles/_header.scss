@@ -1,0 +1,65 @@
+@use 'variaveis' as *;
+
+.header{
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: $corFundoSecundaria;
+    transition: background-color .5s ease;
+    z-index: 1;
+    font-family: $fontSecundaria;
+
+    &--is-hidden{
+        background-color: transparent;
+
+        .header{
+            &__logo, &__links__item:first-child{
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity .5s ease;
+            }
+        }
+    }
+
+    &__container{
+        padding: 8px 36px;
+        display: flex;
+        justify-content: space-between;
+        @media(max-width: 768px){
+            padding: 0 12px 0 20px;    
+        }
+    }
+
+    &__logo{
+        max-width: 100px;
+        width: 100%;
+        transition: opacity .5s ease;
+        @media(max-width: 768px){
+            max-width: 64px;    
+        }
+    }
+
+    &__links{
+        display: flex;
+        align-items: center;
+        padding-right: 12px;
+
+        &__item{
+            margin: 5px;
+            text-decoration: none;
+            transition: opacity .5s ease;
+            list-style: none;
+            
+
+            a{
+                text-decoration: none;
+                font-size: 28px;
+                color: $corFont;
+                font-weight: 600;
+                &:hover{
+                    color: $corFontHover;
+                }
+            }
+        }
+    }
+}
